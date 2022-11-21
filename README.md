@@ -1,2 +1,5 @@
 # CALC!
-Ist ein Libre office Calc Statik Program ÖNORM B und Eurocodes
+Ist ein Libre Office Calc basierendes Statik Program 
+ÖNORM B und Eurocode
+Online Datenbank
+

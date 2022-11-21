@@ -1,0 +1,69 @@
+To-Do
+
+Changelog V0.1 alpha
+*Es kann zu Anzeigefehler kommen
+*Makros sind nicht komplett Ausgebaut
+*Die Speicherfunktion Einzelner Projekte als Auslagerungsdatei wird erst beid der Vollversion 1.0 Funtionieren (Datenmenge ersparnis)
+*Generell kann es zu Falschen Ausgaben kommen!!!!! ACHTUNG!!!! Bitte Hausverstand einschalten!!!!!!!!
+*Abbundpläne sind noch nicht Überall Verfügbar-> wird ers nach und nach Eingearbeitet.
+*Holzfestigkeiten sind nur von Vollholz und BSH Verfügbar! -> Baubuche, Laubholz kommt in der Version 0.3
+
+Module:
+
+---------------Versatz--------------
+
++Einfacher Versatz 	-> Sollte alles Funktionieren
+
++Fersen Versatz 	-> Sollte alles Funktionieren
+
+
++Doppelter Versatz 	-> Die Exzentrität ist noch nicht Fertig
+ 			-> kleine fehler werden in der Version 0.2 Beseitigt
+
+--------------Druckstab---------------
++Stahlstütze 		-> Die Datenbank ist noch nicht komplett gefüllt daher kann es zu Fehlern kommen
+
++Holzstütze 		-> Sollte ohne Probleme Funktionieren 
+			-> Eventuell wird noch eine Seitliche Spannung als Angrifspunkt implementiert um zb ein Kopfband einzurechnen
+
+--------------Zugstab---------------
+
++Dübel besonderer Bauart-> Die Werte sind aus einem Tabellenwerk->Werden ab Version 0.3 in die Genormte Berechnung Umgewandelt
+			-> Der ausziehwiederstand wird noch genauer Untersucht es sind noch Unklarheiten Vorhanden
+			-> Die Verbindungsmittel ansich werden noch einmal Durchkontrolliert!
+
++Stabförmige		-> Nägel sowie Satbdübel und Passbolzen sollten alle Funtionieren 
+			-> Die mindestrandabstände sind Fehleranfällig
+			-> ist noch in der Anfangsphase
+
++Stahl			-> Beeinhaltet alle Gewindestangen,Metallrundstäbe(Beilagscheibe) und Flacheisen
+			-> Ab Version 0.7
+
+--------------Biegeträger---------------
+
+Biegeträger Holz 1 	-> Kleiner Bruder zu Biegträger Holz 2 -> Streckenlast mit oder ohne Auskragung
+			-> Berechnung sollte Funktionieren 
+			-> Die Datenübergabe an die Hirnholzanschlüsse könnte bugen
+			-> Auflager Ansich ist etwas fehlerhaft
+			-> Die Schwingung ist durch Annäherungsformel Bindend-> die normgerechte Berechnung wird ab V0.4 ergänzt
+
+Biegeträger Holz 2	-> Verschiedene Eingaben
+			-> Die Weiterentwicklung von Biegeträger Holz 1 
+			-> Verschiedene Systeme
+			-> Die Durchbiegung wird durch näherungsformel berechnet daher nicht Bindend!
+			-> Die Schwingung ist durch Annäherungsformel Bindend-> die normgerechte Berechnung wird ab V0.4 ergänzt
+
+Biegeträger Stahl	-> Streckenlast mit Auskragung
+			-> Weitere Profile werden ab V0.4 Verfügbar sein
+
+--------------Hirnholzanschluss---------------
+
+Schwalbenschwanz 	-> Berechnung sollte Passen
+			-> Transfer zu Biegeträger könnte Fehleranfällig sein
+			
+Metallische Verbinder	-> Die Rd werte kommen aus einer Tabelle -> wird ab V0.9 exakt Berechnet (ETA Zualssung)
+			-> Simpson StrongTie
+			-> Transfer zu Biegeträger könnte Fehleranfällig sein
+
+Vollgewindeschrauben	-> Wird auch aus Tabellenwerk Berechnet
+			-> Ab V0.7

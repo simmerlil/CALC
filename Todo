@@ -1,0 +1,39 @@
+Allgemein
+---------Updates ----
+Datenbanken werden automatisch Online aktualisiert
+
+CALC Bemessungsprogram muss noch Manuel Aktualisiert werden
+
+
+
+---------Speichern und laden-----------------
+-extra Tabelle mit alle Calc Programmen Nummerisch Aufgelistet
+-als csv Datei 
+-mit checkwert um falsche dateien laden zu vermeiden
+
+
+Die Nummernliste ab V0.1
+
+1 Einfacher Versatz
+2 Fersen Versatz
+3 Doppelter Versatz
+-----Druckstab-----
+4 Druckstab Holz
+5 Druckstab Stahl
+-------Zugstab----
+6 Zugstab Dübel besonderer Bauart
+7 Zugstab Stiftförmige Verbindungsmittel
+------Biegeträger-----
+8 Biegetraeger 1 Holz
+9 Biegetraeger 1 Stahl
+10 Biegetrager 2 Holz
+11 Holztramdecke
+----Hirnholz Anschluss-------
+12 Balkenschuh, Balkenträger
+13 Schwalbenschwanz
+14 Vollgewindeschrauben
+
+
+
+
+
