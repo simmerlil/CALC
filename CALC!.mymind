@@ -1,0 +1,35 @@
+{
+	"root": {
+		"id": "gopnaxnv",
+		"text": "CALC!",
+		"notes": "<div>cde</div><div><br>dw<hr id=\"null\"></div>",
+		"layout": "map",
+		"shape": "box",
+		"children": [
+			{
+				"id": "ydeetdvp",
+				"text": "Speichern",
+				"notes": "",
+				"side": "right"
+			},
+			{
+				"id": "kxqnwxqn",
+				"text": "Module",
+				"notes": "",
+				"side": "left",
+				"children": [
+					{
+						"id": "kuxchsku",
+						"text": "1.Träger",
+						"notes": ""
+					},
+					{
+						"id": "uqrgipqq",
+						"text": "2.Verbindungen",
+						"notes": ""
+					}
+				]
+			}
+		]
+	}
+}
