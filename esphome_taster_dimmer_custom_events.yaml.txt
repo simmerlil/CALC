@@ -1,0 +1,123 @@
+blueprint:
+  name: ESPHome Taster → Dimmer (Custom Event Names)
+  description: >
+    Steuert einen Dimmer (Light Entity) über einen ESPHome-Taster.
+    Eventnamen frei konfigurierbar. Unterstützt Kurz, Doppel, Hold Start & Hold End.
+  domain: automation
+
+  input:
+    light_target:
+      name: Zu steuerndes Licht
+      selector:
+        entity:
+          domain: light
+
+    event_short:
+      name: Event → Kurz-Druck
+      description: Der exakte Event-Name für kurzen Tastendruck
+      selector:
+        text:
+
+    event_double:
+      name: Event → Doppel-Klick
+      selector:
+        text:
+
+    event_hold_start:
+      name: Event → Hold Start
+      selector:
+        text:
+
+    event_hold_end:
+      name: Event → Hold End
+      selector:
+        text:
+
+    brightness_step:
+      name: Dimm-Schrittgröße
+      default: 15
+      selector:
+        number:
+          min: 1
+          max: 50
+          unit_of_measurement: "%"
+          mode: slider
+
+    dim_delay:
+      name: Dimm-Geschwindigkeit (ms)
+      default: 200
+      selector:
+        number:
+          min: 50
+          max: 500
+          mode: slider
+          unit_of_measurement: ms
+
+variables:
+  light_entity: !input light_target
+  ev_short: !input event_short
+  ev_double: !input event_double
+  ev_hold_start: !input event_hold_start
+  ev_hold_end: !input event_hold_end
+  step: !input brightness_step
+  delay_ms: !input dim_delay
+
+trigger:
+  - platform: event
+    event_type: "{{ ev_short }}"
+    id: kurz
+
+  - platform: event
+    event_type: "{{ ev_double }}"
+    id: doppel
+
+  - platform: event
+    event_type: "{{ ev_hold_start }}"
+    id: hold
+
+  - platform: event
+    event_type: "{{ ev_hold_end }}"
+    id: hold_end
+
+
+action:
+  - choose:
+
+      # Kurz-Druck
+      - conditions: "{{ trigger.id == 'kurz' }}"
+        sequence:
+          - service: light.toggle
+            target:
+              entity_id: "{{ light_entity }}"
+
+      # Doppel-Klick
+      - conditions: "{{ trigger.id == 'doppel' }}"
+        sequence:
+          - service: light.turn_on
+            data:
+              brightness_pct: 100
+            target:
+              entity_id: "{{ light_entity }}"
+
+      # Hold Start
+      - conditions: "{{ trigger.id == 'hold' }}"
+        sequence:
+          - repeat:
+              until:
+                - condition: template
+                  value_template: "{{ repeat.index > 10000 }}"
+              sequence:
+                - service: light.turn_on
+                  target:
+                    entity_id: "{{ light_entity }}"
+                  data:
+                    brightness_step: "{{ step }}"
+                - delay:
+                    milliseconds: "{{ delay_ms }}"
+
+      # Hold End → stoppe Dimmen
+      - conditions: "{{ trigger.id == 'hold_end' }}"
+        sequence:
+          - stop: "Dimmen beendet"
+
+mode: restart
